@@ -1,95 +1,121 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from './logo.png'; // Importe seu logo
+import fundo from './fundo.jpeg'; // Importe a imagem de fundo
 
 const Register = () => {
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-200 p-6">
-      <div className="bg-gray text-white w-full max-w-md rounded-xl shadow-lg">
-        {/* Logo e Texto */}
-        <div className="h-32 bg-[#09ba65] rounded-t-xl flex flex-col items-center justify-center p-4">
-          <img src={logo} alt="Logo" className="w-16 mb-1" />
-          {/* Texto de boas-vindas */}
-          <h1 className="text-2xl font-bold text-white text-center mb-1">
-            CADASTRE-SE NO NUTRI IFPA!
-          </h1>
-          {/* Subtítulo */}
-          <h3 className="text-sm text-gray-200 text-center mb-1">
-            Preencha os dados abaixo para criar sua conta
-          </h3>
-        </div>
+    <div className="flex min-h-screen bg-[#f0f9ff]">
+      {/* Lado Esquerdo com a Ilustração */}
+      <div className="hidden md:flex flex-1 bg-[#168134] items-center justify-center">
+        <img
+          src={logo}
+          alt="fundo"
+          className="w-[100%] h-[100%]"
+        />
+      </div>
 
-        {/* Formulário */}
-        <form className="p-6 bg-white rounded-b-xl shadow-md">
-          {/* Nome de Usuário */}
-          <div className="relative mb-4">
-            <p className="relative mb-1 text-black font-bold">Nome de Usuário</p>
-            <input
-              type="text"
-              required
-              className="w-full text-black pl-2 pr-4 py-2 text-lg border border-[#1e2d4063] rounded-md focus:border-[#1e2d40cf] outline-none"
-            />
+      {/* Lado Direito com o Formulário */}
+      <div className="flex-1 flex items-center justify-center bg-white p-8 shadow-lg">
+        <div className="w-full max-w-md">
+          {/* Logo e Título */}
+          <div className="flex flex-col items-center mb-6">
+            <img src={logo} alt="Logo" className="w-16 mb-4" />
+            <h2 className="text-3xl font-bold text-[#1e2d40]">CADASTRE-SE</h2>
+            <p className="text-sm text-gray-600 mt-1">
+              Preencha os dados abaixo para criar sua conta
+            </p>
           </div>
 
-          {/* Matrícula */}
-          <div className="relative mb-4">
-            <p className="relative mb-1 text-black font-bold">Matrícula</p>
-            <input
-              type="text"
-              required
-              className="w-full text-black pl-2 pr-4 py-2 text-lg border border-[#1e2d4063] rounded-md focus:border-[#1e2d40cf] outline-none"
-            />
-          </div>
+          {/* Formulário */}
+          <form>
+            {/* Nome de Usuário */}
+            <div className="mb-4">
+              <label className="block mb-1 text-gray-600 font-bold">
+                Nome de Usuário
+              </label>
+              <input
+                type="text"
+                placeholder=""
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
 
-          {/* Email */}
-          <div className="relative mb-4">
-            <p className="relative mb-1 text-black font-bold">E-mail</p>
-            <input
-              type="email"
-              required
-              className="w-full text-black pl-2 pr-4 py-2 text-lg border border-[#1e2d4063] rounded-md focus:border-[#1e2d40cf] outline-none"
-            />
-          </div>
+            {/* Matrícula */}
+            <div className="mb-4">
+              <label className="block mb-1 text-gray-600 font-bold">
+                Matrícula
+              </label>
+              <input
+                type="text"
+                placeholder=""
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
 
-          {/* Senha */}
-          <div className="relative mb-4">
-            <p className="relative mb-1 text-black font-bold">Senha</p>
-            <input
-              type="password"
-              required
-              className="w-full text-black pl-2 pr-4 py-2 text-lg border border-[#1e2d4063] rounded-md focus:border-[#1e2d40cf] outline-none"
-            />
-          </div>
+            {/* E-mail */}
+            <div className="mb-4">
+              <label className="block mb-1 text-gray-600 font-bold">
+                E-mail
+              </label>
+              <input
+                type="email"
+                placeholder=""
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
 
-          {/* Turno */}
-          <div className="relative mb-6">
-            <p className="relative mb-1 text-black font-bold">Turno</p>
-            <select
-              required
-              className="w-full text-black pl-2 pr-4 py-2 text-lg border border-[#1e2d4063] rounded-md focus:border-[#1e2d40cf] outline-none"
+            {/* Senha */}
+            <div className="mb-4">
+              <label className="block mb-1 text-gray-600 font-bold">
+                Senha
+              </label>
+              <input
+                type="password"
+                placeholder=""
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required
+              />
+            </div>
+
+            {/* Turno */}
+            <div className="mb-4">
+              <label className="block mb-1 text-gray-600 font-bold">
+                Turno
+              </label>
+              <select
+                className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:border-blue-500"
+                required
+              >
+                <option value="">Selecione o turno</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+              </select>
+            </div>
+
+            {/* Botão de Cadastro */}
+            <button
+              type="submit"
+              className="w-full py-2 px-4 bg-[#168134] text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-300"
             >
-              <option value="">Selecione o turno</option>
-              <option value="manha">Manhã</option>
-              <option value="tarde">Tarde</option>
-              <option value="noite">Noite</option>
-            </select>
-          </div>
-
-          {/* Botão de Cadastro */}
-          <div className="mb-4">
-            <button className="w-full py-2 text-lg font-semibold bg-[#09ba65] text-white rounded-md hover:bg-[#059e52]">
               Cadastrar
             </button>
-          </div>
 
-          {/* Link para voltar ao Login */}
-          <div className="text-center">
-            <p className="relative mb-1 text-black font-bold">Já tem uma conta?</p>
-            <Link to="/login" className="text-[#1e2d40] text-sm hover:underline">
-              Faça o login
-            </Link>
-          </div>
-        </form>
+            {/* Link para Login */}
+            <div className="text-center mt-4">
+              <p className="text-sm text-gray-600">
+                Já tem uma conta?{' '}
+                <Link to="/login" className="text-blue-500 hover:underline">
+                  Faça o login
+                </Link>
+              </p>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
   );
