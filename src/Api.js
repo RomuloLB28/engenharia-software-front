@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:4000',
+  baseURL: 'https://engenharia-software-back.onrender.com',
   withCredentials: true, // Importante para enviar cookies e credenciais
 });
 
