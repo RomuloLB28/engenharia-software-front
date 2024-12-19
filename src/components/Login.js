@@ -13,7 +13,7 @@ const Login = () => {
 
     try {
       // Envia as credenciais para o backend para validação
-      const response = await axios.post('https://engenharia-software-back.onrender.com/usuarios', {
+      const response = await axios.post('https://engenharia-software-back.onrender.com/usuarios/login', {
         nome,
         senha,
       });
