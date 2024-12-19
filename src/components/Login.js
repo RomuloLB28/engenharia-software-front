@@ -13,7 +13,7 @@ const Login = () => {
 
     try {
       // Envia as credenciais para o backend para validação
-      const response = await axios.post('http://localhost:4000/usuarios/login', {
+      const response = await axios.post('https://engenharia-software-front.vercel.app/login', {
         nome,
         senha,
       });
